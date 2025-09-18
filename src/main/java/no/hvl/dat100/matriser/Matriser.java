@@ -4,17 +4,21 @@ public class Matriser {
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		System.out.println(tilStreng(matrise));
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
+		StringBuilder builder = new StringBuilder();
+
+		for(int[] array : matrise){
+			for(int element : array){
+				builder.append(element).append(" ");
+			}
+			builder.append("\n");
+		}
+		return builder.toString();
 	}
 
 	// c)
