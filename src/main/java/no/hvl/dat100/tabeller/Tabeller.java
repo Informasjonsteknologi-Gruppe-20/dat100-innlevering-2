@@ -5,7 +5,7 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
+		// TODO todo TODO toDO TOdo
 		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
 
 	}
