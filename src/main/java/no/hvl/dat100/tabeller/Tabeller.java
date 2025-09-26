@@ -28,11 +28,13 @@ public class Tabeller {
 
 	// c)
 	public static int summer(int[] tabell) {
+
         int sum = 0;
 		for (int i : tabell) {
             sum += i;
         }
         return sum;
+
 	}
 
 	// d)
@@ -42,6 +44,7 @@ public class Tabeller {
             if (i == tall) return true;
             }
         return false;
+
     }
 
 
@@ -49,8 +52,11 @@ public class Tabeller {
 	public static int posisjonTall(int[] tabell, int tall) {
 
 		for (int i = 0; i < tabell.length; i++){
+
             if (tabell[i] == tall) {
+
                 return i;
+
             }
         }
         return -1;
@@ -59,21 +65,46 @@ public class Tabeller {
 	// f)
 	public static int[] reverser(int[] tabell) {
 
-        // TODO
-        throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+        int[] revers = new int [tabell.length];
+        int j = 0;
+        for (int i = tabell.length -1; i >= 0; i--) {
+            revers[j] += tabell[i];
+            j++;
+        }
+
+        return revers;
+
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+        for (int i = 0; i < tabell.length -1; i++) {
+
+            if (tabell[i] > tabell[i+1]) {
+                return false;
+            }
+        }
+
+        return true;
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-        throw new UnsupportedOperationException("Metoden setSammen ikke implementert");
+        int[] sammensatt = new int[tabell1.length + tabell2.length];
+        int j = 0;
 
+        for (int i : tabell1) {
+            sammensatt[j] += i;
+            j++;
+        }
+
+        for (int i : tabell2) {
+            sammensatt[j] += i;
+            j++;
+        }
+
+        return sammensatt;
 	}
 }
