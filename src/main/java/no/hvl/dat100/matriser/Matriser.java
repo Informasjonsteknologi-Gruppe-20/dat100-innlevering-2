@@ -4,7 +4,12 @@ public class Matriser {
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-		System.out.println(tilStreng(matrise));
+		for (int[] rad : matrise) {
+            for (int verdi : rad) {
+                System.out.print(verdi + " ");
+            }
+            System.out.println();
+	    }
 	}
 
 	// b)
