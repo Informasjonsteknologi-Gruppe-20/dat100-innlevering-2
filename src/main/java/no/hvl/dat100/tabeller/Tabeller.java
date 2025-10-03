@@ -1,63 +1,65 @@
 package no.hvl.dat100.tabeller;
 
-public class Tabeller {
+import java.util.stream.IntStream;
 
+public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
-
+		System.out.println(tilStreng(tabell));
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+		var li = IntStream.of(tabell);
+		return "["+String.join(",",li.mapToObj(Integer::toString).toList())+"]";
 	}
 
 	// c)
 	public static int summer(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
+		return IntStream.of(tabell).sum();
 	}
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
-
+		return IntStream.of(tabell).anyMatch(v->v==tall);
 	}
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
+		for(int i = 0;i<tabell.length;i++){
+			if(tabell[i] == tall) return i;
+		}
+		return -1;
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+		int[] new_tabell = new int[tabell.length];
+		for(int i = 0;i<tabell.length;i++){
+			new_tabell[i] = tabell[tabell.length-i-1];
+		}
+		return new_tabell;
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+		int last_num = 0;
+		for(int i : tabell){
+			if(i > last_num){
+				last_num = i;
+			}else{
+				return false;
+			}
+		}
+		return true;
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
-
+		int total_length = tabell1.length+tabell2.length;
+		int[] new_list = new int[total_length];
+		System.arraycopy(tabell1, 0, new_list, 0, tabell1.length);
+		System.arraycopy(tabell2, 0, new_list, tabell1.length, tabell2.length);
+		return new_list;
 	}
 }
